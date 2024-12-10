@@ -27,8 +27,8 @@ Literals:\
 Casts: see **Int**, but wraps large numbers to negatives
 
 ## Float
-A data type representing a signed, fractional number, in accordance to IEEE 754. Floats have two sizes:\
-(Float32, Float64), Float is an alias for Float64\
+A data type representing a signed, fractional number, in accordance to IEEE 754. Floats have multiple different sizes:\
+(Float16, Float32, Float64, Float128), Float is an alias for Float64\
 Literals:\
 `2.0`, `-9.7`, `3.1415926`, etc
 
