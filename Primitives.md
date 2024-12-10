@@ -2,11 +2,11 @@
 
 ## Bool
 A data type representing a true or false value.\
-Literals: `true`, `false`\
+Literals: `true`, `false`
 
 Casts:\
 `(U)Int`: `true` -> `1`, `false` -> `0`\
-`Float`: `true` -> `1.0`, `false` -> `0.0`\
+`Float`: `true` -> `1.0`, `false` -> `0.0`
 
 ## Int
 A data type representing a signed, whole number, positives and negatives. Ints have multiple different sizes:\
@@ -16,7 +16,7 @@ Literals:\
 
 Casts:\
 `Float`: the_int.0\
-`Bool`: `0` -> `false`, not `0` -> `true`\
+`Bool`: `0` -> `false`, not `0` -> `true`
 
 ## UInt
 A data type representing an unsigned, whole number, only positives. UInts have multiple different sizes:\
@@ -32,9 +32,9 @@ A data type representing a signed, fractional number, in accordance to IEEE 754.
 Literals:\
 `2.0`, `-9.7`, `3.1415926`, etc
 
-Casts:
+Casts:\
 `(U)Int`: the value, floored\
-`Bool`: `0.0` -> `false`, not `0.0` -> `true`\
+`Bool`: `0.0` -> `false`, not `0.0` -> `true`
 
 ### Changing the base of Ints, UInts, and Floats
 All Ints, UInts, and Floats can have their base change according to prefixes. By default, these literals are in base 10, decimal.\
@@ -50,7 +50,7 @@ Literals:\
 `'a'`, `'y'`, `'&'`, etc
 
 Casts:\
-`(U)Int`: the unicode value of this character
+`(U)Int`: the unicode value of this character\
 `Float`: the unicode value of this character.0
 
 ## String
