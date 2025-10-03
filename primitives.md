@@ -44,20 +44,11 @@ All Ints, UInts, and Floats can have their base change according to prefixes. By
 `0b` -> Binary, base 2\
 Example: `0xF8.D`, `0b101`, `0o17.2`, etc
 
-## Char
-A data type representing a letter or symbol of unicode text. All characters are encoded under UTF-8. Chars work closely with Ints, like in Java. But conversely, the integer representation is Unicode, NOT ASCII\
-Literals:\
-`'a'`, `'y'`, `'&'`, etc
-
-Casts:\
-`(U)Int`: the unicode value of this character\
-`Float`: the unicode value of this character.0
-
 ## String
-A data type representing an array of chars. Strings are the most complex of the primitives. Strings are closer to arrays as they have functions upon themselves. Strings are immutable.\
+A data type representing a length of text. Strings are the most complex of the primitives. Strings are immutable.\
 Literals:\
 `"hello, world"`, `"a"`, `"123"`, etc
 
 All strings are multi-line, there is no difference between single and multiple lines in a string. Multi-line strings set their horizontal baseline to the left-most non-whitespace character.
 
-Strings cannot be casted to anything.
+Strings cannot be casted to anything. Instead, they feature methods to convert directly to the desired outcome like `parse_int`, `parse_float`, and `is_empty` for example.
