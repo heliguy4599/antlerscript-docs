@@ -42,14 +42,14 @@ if(my_circ.radius % 2 != 0: {
 ```
 
 ## Class Files
-The structure of Class Files are a little more complex, these files *are* classes. Please read `classes.md` if you need to familiarize yourself more with AntlerScript's classes.\
+The structure of class files are a little more complex, these files *are* classes. Please read `classes.md` if you need to familiarize yourself more with AntlerScript's classes.\
 (Yes I know I haven't wrote this yet, AHHHHH)
 
-The beginning of a Class File can start with imports, but *must* contain  `$classfile SomeClassName` (the SomeClassName part is up to you to change).
+The beginning of a class file can start with imports, but *must* contain  `$classfile SomeClassName` (the SomeClassName part is up to you to change).
 
 It is good practice to ensure the filename is a snake_case version of the class name, but this is not required.
 
-Essentially, these files are a class expression, but without the `Class(...)` surrounding the body. This means that the only things allowed at the top level of non-main files are variable declarations and class-directives.
+Essentially, these files are a class expression, but without the `Class(...)` surrounding the body. This means that the only things allowed at the top level of class files are variable declarations and class-directives.
 
 Here is an example of a class file, `circle.atl`:
 
