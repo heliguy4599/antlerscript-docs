@@ -42,8 +42,7 @@ if(my_circ.radius % 2 != 0: {
 ```
 
 ## Class Files
-The structure of class files are a little more complex, these files *are* classes. Please read `classes.md` if you need to familiarize yourself more with AntlerScript's classes.\
-(Yes I know I haven't wrote this yet, AHHHHH)
+The structure of class files are a little more complex, these files *are* classes. Please read `classes.md` if you need to familiarize yourself more with AntlerScript's classes.
 
 The beginning of a class file can start with imports, but *must* contain  `$classfile SomeClassName` (the SomeClassName part is up to you to change).
 
