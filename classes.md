@@ -30,7 +30,7 @@ let Circle = Class(
 		print("I am the class Circle, my shape_name is: <shape_name>")
 	}
 
-	# Instance Memebers
+	# Instance Members
 	let Uuid _id = Uuid{} # Protected member
 	let mut Float radius # Value absent, initialized by the constructor
 	let mut Float diameter = radius * 2
@@ -55,7 +55,7 @@ Here is an example of an instance member declaration:
 ```ruby
 Class(
 	let Int i = 0
-	let j = 0 # `j's` type is inferred from it's value to be Int
+	let j = 0 # `j's` type is inferred from its value to be Int
 )
 ```
 
@@ -77,9 +77,9 @@ let radius = some_circle.radius
 
 Note the fact that we must access `radius` via an instance object of the class.
 
-### Non-Primative Instance Members
+### Non-Primitive Instance Members
 
-In AntlerScript, instance members may be any type, including other classes or objects. It is important to understand that when an instance of a class is constructed, all instance members are constructed uniquely. This means that if you declare, say, a List instance member, you will get a new list for each class instance. If this List contains items, these items will all be constructed new again for every class instance. If a function is being called to supply an instance member with a value, it will be called for every instance.
+In AntlerScript, instance members may be any type, including other classes or objects. It is important to understand that when an instance of a class is constructed, all instance members are constructed uniquely. This means that if you declare, say, a List instance member, you will get a new list for each class instance. If this List contains items, these items will all be constructed new again for every class instance. If a function supplies an instance member’s value, it will be called separately for every instance.
 
 ### Instance Functions, aka Instance Methods
 
@@ -87,11 +87,11 @@ In AntlerScript, functions are directly applied to the class, within the class b
 
 In AntlerScript, instance methods are, in fact, also instance members. Instance methods are a subset of instance members, so keep in mind that everything that applies to instance members also applies to instance methods, including allowing their values to be set via the constructor.
 
-Instance methods may access static or instanced variables directly, no access syntax needed. AntlerScript does not feature variable shadowing (except in scope access, described in `classes-continued.md`), so any member may not have it's name re-declared in a method's scope. As such, you will never need to do `self.some_var`.
+Instance methods may access static or instanced variables directly, no access syntax needed. AntlerScript does not feature variable shadowing (except in scope access, described in `classes-continued.md`), so any member may not have its name re-declared in a method's scope. As such, you will never need to do `self.some_var`.
 
 Speaking of `self`, that is how you refer to the current instance. Lower-case "s" `self` references the current instance that the instance function is running on. Capital "S" `Self` references the current class. Because classes do not know their own names, the only way to access the class you are in is using the `Self` keyword.
 
-Here is an example instance method declarations:
+Here is an example of instance method declarations:
 
 ```ruby
 Class(
@@ -132,8 +132,8 @@ Here is an example of a static member declaration:
 ```ruby
 Class(
 	let static Int i = 0
-	let static j = 0 # `j`'s type is inferred from it's value to be Int
-  let static mut Int k = 0 # The `mut` keyword comes after the `static` keyword
+	let static j = 0 # `j`'s type is inferred from its value to be Int
+	let static mut Int k = 0 # The `mut` keyword comes after the `static` keyword
 )
 ```
 
@@ -143,7 +143,7 @@ Static members are not allowed to be constructed from the class's constructor.
 
 There are additional rules to `static` members, but these will be discussed in `classes-continued.md`, due to being fairly more complex.
 
-Here is an example of accessing the `shape_name` static member of overview's example class Circle:
+Here is an example of accessing the `shape_name` static member of Overview's example class Circle:
 
 ```ruby
 let name_of_shape = Circle.shape_name
@@ -155,31 +155,31 @@ Note that we used the class variable itself. If we tried to access `shape_name` 
 
 Static methods are nearly identical to instance methods, they share the same syntax, apart from using the `static` declaration keyword to denote this member kind.
 
-Static methods may refer only to other static members. A static method cannot access an instance member, as those members haven't been created. Accessing static members from a static method is identical to that seen in the instance methods, which is, refer to the static member by name, no access syntax needed. The lowercase "s" `self` keyword is not available inside static methods, as there is no current instance. The capitol "S" `Self` keyword is, however, as there is, of course, still the class itself.
+Static methods may refer only to other static members. A static method cannot access an instance member, as those members haven't been created. Accessing static members from a static method is identical to that seen in the instance methods, which is, refer to the static member by name, no access syntax needed. The lowercase "s" `self` keyword is not available inside static methods, as there is no current instance. The capital "S" `Self` keyword is, however, as there is, of course, still the class itself.
 
 Here is an example of method declarations:
 
 ```ruby
 Class(
-	static let Int s = 10
+	let static Int s = 10
 	let Int i = 20
 
 	# Explicit typing
-	static Func(:) some_method_1 = Func(:) {
+	let static Func(:) some_method_1 = Func(:) {
 		print(s) # Accesses the static field `s`
 		# print(i) would give a compile-time error, because `i` is not static
 		print("I am some_method_1!")
 	}
 
 	# Type inferred from value
-	static some_method_2 = Func(:) {
+	let static some_method_2 = Func(:) {
 		print(s) # Accesses the static field `s`
 		# print(i) would give a compile-time error, because `i` is not static
 		print("I am some_method_2!")
 	}
 
 	# Value is target-typed to the variable's type
-	static Func(:) some_method_3 = {
+	let static Func(:) some_method_3 = {
 		print(s) # Accesses the static field `s`
 		# print(i) would give a compile-time error, because `i` is not static
 		print("I am some_method_3!")
@@ -196,7 +196,7 @@ AntlerScript features the common trio of publicity access modifiers: Public, Pro
 This is a short summary of each:
 
 - Public: Accessible anywhere in the program
-- Protected: Accessible within the class itself, classes that include this class
+- Protected: Accessible within the class itself, and in classes that include this class
 - Private: Accessible only within the class itself, nowhere else.
 
 Instead of using keywords like other languages, AntlerScript instead uses the presence of leading underscores in the field's name. A single underscore means Protected, and two underscores means Private.
@@ -275,7 +275,7 @@ let Example = Class(
 )
 
 let fn = Func(:) {
-	let ex = Example()
+	let ex = Example{}
 }
 
 fn() # Here we would see "Example instance with i of 10 is being destructed" because `ex` fell out of `fn`'s scope, and was garbage-collected
@@ -311,7 +311,7 @@ There's no limit to how many casts you may have, so long as each one is to a dif
 
 ## Constructing an Instance
 
-To construct an instance of a constructable class is simple. Reference the class (usually through a variable that points to it) and use braces to supply the class's constructor with it's required or optional values. If no values are required, the braces must still be present, but won't need any values within them. Here is an example of constructing a class that requires one value:
+To construct an instance of a constructable class is simple. Reference the class (usually through a variable that points to it) and use braces to supply the class's constructor with its required or optional values. If no values are required, the braces must still be present, but won't need any values within them. Here is an example of constructing a class that requires one value:
 
 ```ruby
 let Example = Class(
