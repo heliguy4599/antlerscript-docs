@@ -63,7 +63,7 @@ As you can see, it is identical to a variable declaration in something like a fu
 
 Something that can be done with instance member declarations that cannot be done with variable declarations is leaving the value absent.
 
-Recall above to the `radius` instance member of Overview's example. It did not have a value assigned (note the lack of `=`). Instead, it's value was supplied by the constructor, which we will go over later.
+Recall above to the `radius` instance member of Overview's example. It did not have a value assigned (note the lack of `=`). Instead, its value was supplied by the constructor, which we will go over later.
 
 AntlerScript has no concept of "undefined" or "void value", nor does AntlerScript feature default values. Instead, this is considered an uninitialized field, and is required to be initialized by the class's constructor, if a constructor is present.
 
